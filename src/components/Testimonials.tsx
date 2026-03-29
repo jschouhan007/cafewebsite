@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-import MagneticButton from './MagneticButton';
+import { Star } from 'lucide-react';
 
 const testimonials = [
   {
@@ -32,36 +31,36 @@ const testimonials = [
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000); // Change card every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
 
   const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+    enter: {
+      rotateY: -90,
       opacity: 0,
-      scale: 0.8
-    }),
+      scale: 0.8,
+      transition: { duration: 0.4 }
+    },
     center: {
       zIndex: 1,
-      x: 0,
+      rotateY: 0,
       opacity: 1,
-      scale: 1
+      scale: 1,
+      transition: { duration: 0.6, type: "spring" as const, bounce: 0.4 }
     },
-    exit: (direction: number) => ({
+    exit: {
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      rotateY: 90,
       opacity: 0,
-      scale: 0.8
-    })
-  };
-
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
-
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prevIndex) => (prevIndex + newDirection + testimonials.length) % testimonials.length);
+      scale: 0.8,
+      transition: { duration: 0.4 }
+    }
   };
 
   return (
@@ -90,31 +89,16 @@ export default function Testimonials() {
           </motion.p>
         </div>
 
-        <div className="relative h-[450px] md:h-[300px] max-w-4xl mx-auto flex items-center justify-center">
-          <AnimatePresence initial={false} custom={direction}>
+        <div className="relative h-[450px] md:h-[300px] max-w-4xl mx-auto flex items-center justify-center perspective-1000">
+          <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              custom={direction}
               variants={slideVariants}
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-              }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.x);
-                if (swipe < -swipeConfidenceThreshold) {
-                  paginate(1);
-                } else if (swipe > swipeConfidenceThreshold) {
-                  paginate(-1);
-                }
-              }}
               className="absolute w-full px-4"
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="glass rounded-[2rem] p-8 md:p-12 border-white/60 shadow-2xl flex flex-col md:flex-row items-center gap-8 bg-white/40">
                 <div className="w-24 h-24 md:w-32 md:h-32 flex-shrink-0 rounded-full overflow-hidden border-4 border-white shadow-lg relative">
@@ -138,22 +122,6 @@ export default function Testimonials() {
               </div>
             </motion.div>
           </AnimatePresence>
-
-          {/* Controls */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between z-20 pointer-events-none px-2 md:-mx-12">
-            <MagneticButton
-              className="w-12 h-12 rounded-full glass bg-white/80 flex items-center justify-center text-slate-800 hover:text-pink-500 hover:scale-110 transition-all pointer-events-auto shadow-lg"
-              onClick={() => paginate(-1)}
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </MagneticButton>
-            <MagneticButton
-              className="w-12 h-12 rounded-full glass bg-white/80 flex items-center justify-center text-slate-800 hover:text-pink-500 hover:scale-110 transition-all pointer-events-auto shadow-lg"
-              onClick={() => paginate(1)}
-            >
-              <ChevronRight className="w-6 h-6" />
-            </MagneticButton>
-          </div>
         </div>
       </div>
     </section>
