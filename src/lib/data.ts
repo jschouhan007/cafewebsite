@@ -1,95 +1,34 @@
-export const MENU_CATEGORIES = [
-  { id: 'coffee', name: 'Coffee & Espresso' },
-  { id: 'tea', name: 'Artisan Teas' },
-  { id: 'food', name: 'Gourmet Bites' },
-  { id: 'desserts', name: 'Sweet Indulgence' },
+import { Coffee, Leaf, CakeSlice } from 'lucide-react';
+
+export const categories = [
+  { id: 'coffee', label: 'Coffee', icon: Coffee },
+  { id: 'tea', label: 'Tea', icon: Leaf },
+  { id: 'pastries', label: 'Pastries', icon: CakeSlice },
 ];
 
-export const MENU_ITEMS = [
-  {
-    id: 1,
-    category: 'coffee',
-    name: 'Signature Gold Cappuccino',
-    price: 6.50,
-    description: 'Double shot of our house roast with silky micro-foam and a touch of edible gold leaf.',
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=800',
-    labels: ['Bestseller', 'Chef\'s Special'],
-  },
-  {
-    id: 2,
-    category: 'coffee',
-    name: 'Velvet Flat White',
-    price: 5.75,
-    description: 'Smooth, creamy, and perfectly balanced. The ultimate morning ritual.',
-    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=800',
-    labels: ['New'],
-  },
-  {
-    id: 3,
-    category: 'coffee',
-    name: 'Iced Amber Latte',
-    price: 6.25,
-    description: 'Cold-pressed espresso with salted caramel and organic oat milk.',
-    image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&q=80&w=800',
-    labels: ['Vegan'],
-  },
-  {
-    id: 4,
-    category: 'food',
-    name: 'Avocado & Truffle Toast',
-    price: 14.50,
-    description: 'Sourdough bread, smashed organic avocado, truffle oil, and poached free-range egg.',
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&q=80&w=800',
-    labels: ['Veg', 'Bestseller'],
-  },
-  {
-    id: 5,
-    category: 'food',
-    name: 'Smoked Salmon Bagel',
-    price: 12.00,
-    description: 'Premium smoked salmon, capers, red onion, and herb cream cheese on a toasted bagel.',
-    image: 'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&q=80&w=800',
-    labels: [],
-  },
-  {
-    id: 6,
-    category: 'desserts',
-    name: 'Dark Chocolate Lava Cake',
-    price: 9.50,
-    description: 'Warm, molten center served with a scoop of Madagascar vanilla bean gelato.',
-    image: 'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&q=80&w=800',
-    labels: ['Chef\'s Special'],
-  },
-];
+export const menuItems = {
+  coffee: [
+    { id: 1, name: 'Neon Espresso', price: '$4.50', desc: 'Double shot of our vibrant house blend.', img: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=600&q=80' },
+    { id: 2, name: 'Pink Velvet Latte', price: '$6.00', desc: 'Smooth latte with a hint of beetroot and vanilla.', img: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80' },
+    { id: 3, name: 'Golden Macchiato', price: '$5.50', desc: 'Caramel infused espresso with steamed milk.', img: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=600&q=80' },
+    { id: 4, name: 'Cold Brew Glow', price: '$5.00', desc: '24-hour steeped cold brew over crystal ice.', img: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=600&q=80' },
+  ],
+  tea: [
+    { id: 5, name: 'Matcha Cloud', price: '$6.50', desc: 'Ceremonial grade matcha with oat milk foam.', img: 'https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&w=600&q=80' },
+    { id: 6, name: 'Hibiscus Burst', price: '$5.00', desc: 'Iced hibiscus tea with fresh berries.', img: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=600&q=80' },
+    { id: 7, name: 'Lavender Earl Grey', price: '$5.50', desc: 'Classic Earl Grey infused with lavender.', img: 'https://images.unsplash.com/photo-1594631252845-29fc4cc8cbf9?auto=format&fit=crop&w=600&q=80' },
+    { id: 8, name: 'Peach Oolong', price: '$6.00', desc: 'Premium oolong tea with sweet peach notes.', img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80' },
+  ],
+  pastries: [
+    { id: 9, name: 'Rainbow Croissant', price: '$5.50', desc: 'Flaky, buttery croissant with colorful layers.', img: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80' },
+    { id: 10, name: 'Berry Tart', price: '$7.00', desc: 'Fresh seasonal berries on a crisp pastry shell.', img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80' },
+    { id: 11, name: 'Neon Macarons', price: '$8.00', desc: 'Box of 3 vibrant, assorted flavor macarons.', img: 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=600&q=80' },
+    { id: 12, name: 'Chocolate Lava', price: '$7.50', desc: 'Warm chocolate cake with a gooey center.', img: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=600&q=80' },
+  ]
+};
 
-export const REVIEWS = [
-  {
-    id: 1,
-    name: 'Sarah Jenkins',
-    rating: 5,
-    comment: 'The best coffee in the city! The atmosphere is so cozy and the staff are incredibly friendly.',
-    date: '2 days ago',
-  },
-  {
-    id: 2,
-    name: 'Michael Chen',
-    rating: 5,
-    comment: 'Exceptional quality. The latte art is a masterpiece every single time.',
-    date: '1 week ago',
-  },
-  {
-    id: 3,
-    name: 'Elena Rodriguez',
-    rating: 4,
-    comment: 'A perfect spot for working or meeting friends. The avocado toast is a must-try!',
-    date: '3 weeks ago',
-  },
-];
-
-export const GALLERY_IMAGES = [
-  'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1200',
-  'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200',
-  'https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=1200',
-  'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200',
-  'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1200',
+export const allMenuItems = [
+  ...menuItems.coffee,
+  ...menuItems.tea,
+  ...menuItems.pastries
 ];
