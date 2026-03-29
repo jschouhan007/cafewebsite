@@ -1,0 +1,5 @@
+{
+  "name": "Tea Bar - Premium Tea & Coffee Experience",
+  "description": "A luxury, interactive tea and coffee bar featuring artisanal brews, gourmet snacks, and a cinematic digital experience.",
+  "requestFramePermissions": ["geolocation"]
+}

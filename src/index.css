@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  --color-neon-pink: #ff007f;
+  --color-neon-orange: #ff5e00;
+  --color-neon-yellow: #ffea00;
+  --color-neon-purple: #8a2be2;
+  --color-coffee-dark: #2A1B18;
+  --color-coffee-light: #D4B8A6;
+
+  --animate-blob: blob 7s infinite;
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/20 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)];
+  }
+  
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(to right, #ff5e00, #ff007f, #8a2be2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .liquid-btn {
+    @apply relative overflow-hidden rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 text-white font-bold shadow-[0_0_20px_rgba(236,72,153,0.5)] hover:shadow-[0_0_30px_rgba(236,72,153,0.8)] transition-all duration-300;
+  }
+
+  .clay-card {
+    @apply bg-[#f8f5ff] rounded-3xl shadow-[10px_10px_20px_#d3d0d9,-10px_-10px_20px_#ffffff] border border-white/50;
+  }
+
+  .neon-border {
+    @apply border border-transparent bg-clip-padding relative before:absolute before:inset-0 before:-z-10 before:m-[-2px] before:rounded-[inherit] before:bg-gradient-to-r before:from-orange-500 before:via-pink-500 before:to-purple-500;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"] {
+    cursor: none;
+  }
+}
