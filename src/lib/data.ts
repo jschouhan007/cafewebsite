@@ -65,23 +65,23 @@ export const MENU_ITEMS = [
 export const REVIEWS = [
   {
     id: 1,
-    name: 'Sarah Jenkins',
+    name: 'Aarav Mehta',
     rating: 5,
-    comment: 'The best coffee in the city! The atmosphere is so cozy and the staff are incredibly friendly.',
+    comment: 'Best coffee in Bangalore! Love the cozy vibes and the staff makes you feel right at home.',
     date: '2 days ago',
   },
   {
     id: 2,
-    name: 'Michael Chen',
+    name: 'Ishaan Kapoor',
     rating: 5,
-    comment: 'Exceptional quality. The latte art is a masterpiece every single time.',
+    comment: 'Consistency is key, and they nail it every time. The latte art is just beautiful!',
     date: '1 week ago',
   },
   {
     id: 3,
-    name: 'Elena Rodriguez',
+    name: 'Meera Deshmukh',
     rating: 4,
-    comment: 'A perfect spot for working or meeting friends. The avocado toast is a must-try!',
+    comment: 'Found my new favorite weekend spot. That avocado toast is just perfection!',
     date: '3 weeks ago',
   },
 ];

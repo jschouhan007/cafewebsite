@@ -5,27 +5,27 @@ import { Star } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Jenkins",
-    role: "Local Artist",
-    content: "The vibrant atmosphere and the Pink Velvet Latte completely changed my morning routine. It's not just coffee, it's an experience.",
+    name: "Ananya Sharma",
+    role: "Digital Creator",
+    content: "The vibe here is unmatched! The Pink Velvet Latte is my absolute favorite, and it's the perfect spot for some creative inspiration.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
+    avatar: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2a04?auto=format&fit=crop&w=150&q=80"
   },
   {
     id: 2,
-    name: "Marcus Chen",
-    role: "Tech Entrepreneur",
-    content: "Fast Wi-Fi, incredible Cold Brew Glow, and a design that keeps me inspired. Neon Brew is my new favorite workspace.",
+    name: "Vikram Malhotra",
+    role: "Startup Founder",
+    content: "High-speed Wi-Fi and that Cold Brew Glow – exactly what I need for my marathon coding sessions. Neon Brew is easily the best co-working cafe in town.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+    avatar: "https://images.unsplash.com/photo-1607990281513-2c110a25bb8c?auto=format&fit=crop&w=150&q=80"
   },
   {
     id: 3,
-    name: "Elena Rodriguez",
-    role: "Food Blogger",
-    content: "Every pastry is a work of art. The Rainbow Croissant isn't just beautiful for Instagram, it tastes absolutely divine.",
+    name: "Priya Iyer",
+    role: "Food Enthusiast",
+    content: "The Rainbow Croissant is a masterpiece! Not only does it look stunning on my feed, but the taste is also just out of this world. Highly recommended!",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
+    avatar: "https://images.unsplash.com/photo-1614283233556-f35b0c801efc?auto=format&fit=crop&w=150&q=80"
   }
 ];
 

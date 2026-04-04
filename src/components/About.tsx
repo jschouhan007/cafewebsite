@@ -53,17 +53,17 @@ export default function About() {
             >
               <div className="flex items-center gap-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" 
+                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=150&q=80" 
                   alt="Founder" 
                   className="w-16 h-16 rounded-full border-2 border-pink-500 object-cover"
                 />
                 <div>
-                  <h4 className="font-display font-bold text-xl text-slate-800">Mia Wong</h4>
-                  <p className="text-pink-600 font-medium text-sm uppercase tracking-wider">Founder & Head Roaster</p>
+                  <h4 className="font-display font-bold text-xl text-slate-800">Anjali Nair</h4>
+                  <p className="text-pink-600 font-medium text-sm uppercase tracking-wider">Founder & Chief Brewer</p>
                 </div>
               </div>
               <p className="mt-4 text-slate-700 italic text-sm">
-                "I wanted to create a space where the energy of the city meets the comfort of a perfectly brewed cup."
+                "My vision was to create a sanctuary where the hustle of Indian streets fades into the warmth of a perfectly crafted brew."
               </p>
             </motion.div>
           </motion.div>
